@@ -4,6 +4,8 @@
  */
 
 
+#define BUTTON1 "b4:7c:9c:e3:f2:62"
+
 #include <stdio.h>
 #include <unistd.h>
 
@@ -205,7 +207,8 @@ int main(void) {
 		if (packet)
 		{
 			eth = (EtherHeader *)packet;
-			sign();
+			if (strcmp(BUTTON1, ether_ntoa(&eth->sourceAddr)) == 0)
+				sign();
 			//printf("%s\n", ether_ntoa(&eth->sourceAddr));
 		}
 	}
