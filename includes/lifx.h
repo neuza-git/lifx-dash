@@ -3,10 +3,6 @@
 **  Copyright 2016 Linard Arquint
 */
 
-/* ADD YOUR OWN LIFX UBTTON */
-
-#define BUTTON1 "b4:7c:9c:e3:f2:62"
-
 /* from here it's dependences) */
 
 #include <arpa/inet.h>
