@@ -3,19 +3,7 @@
  **  Copyright 2016 Linard Arquint
  */
 
-
-#define BUTTON1 "b4:7c:9c:e3:f2:62"
-
-#include <stdio.h>
-#include <unistd.h>
-
 #include "lifx.h"
-#include "bulb.h"
-#include "color.h"
-#include <pcap.h>
-#include <stdio.h>
-#include <stdint.h>
-#include <netinet/ether.h>
 
 typedef struct __attribute__((__packed__)) EtherHeader {
 	const struct ether_addr destAddr;

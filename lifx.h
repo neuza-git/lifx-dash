@@ -3,6 +3,35 @@
 **  Copyright 2016 Linard Arquint
 */
 
+/* ADD YOUR OWN LIFX UBTTON */
+
+#define BUTTON1 "b4:7c:9c:e3:f2:62"
+
+/* from here it's dependences) */
+
+#include <arpa/inet.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/time.h>
+#include <time.h>
+#include <string.h>
+#include <strings.h>
+#include <netinet/in.h>
+#include <netinet/ip.h> 
+#include <assert.h>
+#include <errno.h>
+#include <unistd.h>
+
+#include "bulb.h"
+#include <pcap.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <netinet/ether.h>
+
+
+
 #ifndef LIFX_H
 #define LIFX_H
 

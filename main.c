@@ -1,4 +1,5 @@
 #include <pcap.h>
+#include <string.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <netinet/ether.h>

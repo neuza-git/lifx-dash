@@ -3,20 +3,7 @@
 **  Copyright 2016 Linard Arquint
 */
 
-#include <arpa/inet.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/time.h>
-#include <time.h>
-#include <string.h>
-#include <strings.h>
-#include <netinet/in.h>
-#include <netinet/ip.h> 
-#include <assert.h>
-#include <errno.h>
+
 
 #include "lifx.h"
 
