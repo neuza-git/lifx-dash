@@ -1,6 +1,6 @@
-### Detect your Amazon Dash bouttons
-##
-
+## Detect your Amazon Dash bouttons
+Make sure that you have configured your button with the amazon application but not yet selected any product so it can detect the button and you don't end up buying anything
+Also they tends to spam your phone where you configured the button if haven't linked any product so make sure to disable some notification from their app ;)
 
 ### For *nix install the tcpdump package and use the following command right before pressing your dash button : 
 `tcpdump -lve | grep "Request who-has"`
