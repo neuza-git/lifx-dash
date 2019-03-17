@@ -16,10 +16,6 @@ not tested but you may try to install tcpdump and apply as filter _arp_.
 Then press your dash button and see what mac address comes often _(the first mac address of the lines)
 
 
-####  Sniffer part from tcpdump page https://www.tcpdump.org/pcap.html
-#### And everything else except the main and some modifications from https://github.com/ArquintL/lifx-c-lib
-
-
 ### Installation :
 you can clone then just do _(I gotta create a new Makefile I know...)_
 make
@@ -29,7 +25,7 @@ make
 ### How to start :
 ./listendash
 
-_(for now it just run and listen for the traffic you can ctrl-c to quit but it does require to be run in background using for example [using the screen package that I find very easy to use](https://linuxize.com/post/how-to-use-linux-screen/))_
+_(for now it just run and listen for the network traffic you can ctrl-c to quit but it does require to be run in background manually, for example [the screen package that I find very easy to use](https://linuxize.com/post/how-to-use-linux-screen/))_
 
 
 
@@ -45,3 +41,7 @@ sudo apt-get install libcap-dev
 For redhat based distros :
 
 yum install libpcap-devel
+
+
+####  Sniffer part from tcpdump page https://www.tcpdump.org/pcap.html
+#### And everything else except the main and some modifications from https://github.com/ArquintL/lifx-c-lib
