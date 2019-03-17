@@ -21,6 +21,7 @@
 #include <unistd.h>
 
 #include "bulb.h"
+#include "../buttons.h"
 #include <pcap.h>
 #include <stdio.h>
 #include <stdint.h>
