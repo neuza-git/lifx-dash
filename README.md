@@ -7,7 +7,7 @@ make
 
 ### Dependence :
 
-It requires the libcap library :
+It requires the libpcap library :
 (other you'll get this error : pcap.h: No such file or directory
 
 For ubuntu/debian (remove sudo if you don't have it)
