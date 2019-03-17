@@ -1,3 +1,5 @@
+#This code allow you to use your amazon dash buttons to toggle the power of your lifx
+
 ## Detect your Amazon Dash bouttons
 Make sure that you have configured your button with the amazon application but not yet selected any product so it can detect the button and you don't end up buying anything
 
