@@ -1,5 +1,5 @@
 Sniffer part from tcpdump page https://www.tcpdump.org/pcap.html
-And also everything else except the main and some modifications from https://github.com/ArquintL/lifx-c-lib
+And everything else except the main and some modifications from https://github.com/ArquintL/lifx-c-lib
 
 
 
