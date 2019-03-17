@@ -194,9 +194,12 @@ int main(void) {
 		packet = pcap_next(handle, &header);
 		if (packet)
 		{
+			//sign();
 			eth = (EtherHeader *)packet;
-			if (strcmp(BUTTON1, ether_ntoa(&eth->sourceAddr)) == 0)
+			//printf("%s\n", BUTTON1);
+			if (strcmp(BUTTON1, ether_ntoa(&eth->sourceAddr))) {
 				sign();
+			}
 			//printf("%s\n", ether_ntoa(&eth->sourceAddr));
 		}
 	}
