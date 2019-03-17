@@ -1,34 +1,23 @@
-default: app
+PATH_SRC = srcs
+SRC = $(PATH_SRC)/*.c #WILDCARD !
 
+FLAGS= -O3 -lpcap
+CC = gcc
+EXECUTABLE = listendash
 
-SRC = \
-	app.c \
-	lifx.c
+HEADERS = -I includes/
 
-INC = \
-	-I./ 
+all : $(EXECUTABLE)
 
-OBJ = $(SRC:.c=.o)
-DEP = $(SRC:.c=.d)
--include $(DEP)
-
-CFLAGS += $(INC) -std=gnu99 -g -O3 -lpcap
-
-ifeq ($(findstring clang, $(shell gcc --version)), clang)
-	CFLAGS += 
-else
-	CFLAGS += -fno-delete-null-pointer-checks
-endif
-
-CPPFLAGS += -MMD -MP
-
-debug: CFLAGS += -DDEBUG
-debug: app
-
-app: $(OBJ)
-	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o listendash -lpcap
+$(EXECUTABLE) : $(SRC)
+	$(CC) $(SRC) -o $(EXECUTABLE) -I includes/ $(FLAGS)
+	@printf "$(EXECUTABLE) created\n"
 	
-clean:
-	rm -f app $(OBJ) $(DEP)
 
-.PHONY: default debug clean
+clean : 
+	/bin/rm -f $(EXECUTABLE)
+	@printf "$(EXECUTABLE) removed\n"
+
+re : clean all
+
+.PHONY : clean all $(EXECUTABLE)
