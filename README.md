@@ -8,7 +8,7 @@ make
 ### Dependence :
 
 It requires the libpcap library :
-(other you'll get this error : pcap.h: No such file or directory
+(other you'll get this error : pcap.h: No such file or directory)
 
 For ubuntu/debian (remove sudo if you don't have it)
 sudo apt-get install libcap-dev
