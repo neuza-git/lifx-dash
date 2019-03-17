@@ -1,6 +1,6 @@
 # This code allow you to use your amazon dash buttons to toggle the power of your lifx
 
-## Detect your Amazon Dash bouttons
+## Detect your Amazon Dash boutton mac addresses
 Make sure that you have configured your button with the amazon application but not yet selected any product so it can detect the button and you don't end up buying anything
 
 Also they'll tends to spam your phone if you haven't linked any product, so make sure to disable some notification on their app ;)
