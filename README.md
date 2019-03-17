@@ -1,11 +1,13 @@
 ### Detect your Amazon Dash bouttons
 ##
-## For *nix install the tcpdump package and use the following command right before pressing your dash button : 
+
+
+### For *nix install the tcpdump package and use the following command right before pressing your dash button : 
 `tcpdump -lve | grep "Request who-has"`
 you may want to press the dash button again after few seconds if it didn't work but the mac address on th left is the mac address of your dash button
 
 
-## For windows
+### For windows
 not tested but you may try to install tcpdump and apply as filter arp and press your dash button and see what mac address comes often
 
 
