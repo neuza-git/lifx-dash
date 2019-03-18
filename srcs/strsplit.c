@@ -1,84 +1,65 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tgascoin <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/10 09:23:30 by tgascoin          #+#    #+#             */
-/*   Updated: 2016/11/14 13:40:12 by tgascoin         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/lifx.h"
-/*#include <stdlib.h>
-#include <string.h>*/
 
-static int		ft_tell_ac(const char *str, char c)
+static	int		ft_count_words(const char *str, char c)
 {
-	int i;
-	int j;
+	int	word;
+	int	i;
 
 	i = 0;
-	j = 0;
-	while (str[i] != '\0')
+	word = 0;
+	if (!str)
+		return (0);
+	while (str[i])
 	{
-		while (str[i] == c && str[i] != '\0')
-			i++;
-		if (str[i] != '\0')
-			j++;
-		while (str[i] != c && str[i] != '\0')
-			i++;
-	}
-	return (j);
-}
-
-static int		ft_tell_size_ac(const char *str, char c, int i)
-{
-	int j;
-
-	j = 0;
-	while (str[i] != c && str[i] != '\0')
-	{
-		j++;
+		if (str[i] == c && str[i + 1] != c)
+			word++;
 		i++;
 	}
-	if (j > 0)
-		j--;
-	return (j);
+	if (str[0] != '\0')
+		word++;
+	return (word);
 }
 
-static char		**ft_sub_strsplit(char const *s, char c)
+static	char	*ft_word(const char *str, char c, int *i)
 {
-	char	**new;
-	int		iac;
-	int		j;
-	int		i;
+	char	*s;
+	int		k;
 
-	iac = 0;
-	i = 0;
-	new = (char**)malloc(sizeof(char*) * (ft_tell_ac(s, c) + 1));
-	if (new == NULL)
+	if (!(s = (char *)malloc(sizeof(s) * (strlen(str)))))
 		return (NULL);
-	while (iac < ft_tell_ac(s, c))
+	k = 0;
+	while (str[*i] != c && str[*i])
 	{
-		j = 0;
-		while (s[i] == c && s[i] != '\0')
-			i++;
-		new[iac] = (char*)malloc(sizeof(char) * (ft_tell_size_ac(s, c, i) + 1));
-		if (new[iac] == NULL)
-			return (NULL);
-		while (s[i] != c && s[i] != '\0')
-			new[iac][j++] = s[i++];
-		new[iac++][j] = '\0';
+		s[k] = str[*i];
+		k++;
+		*i += 1;
 	}
-	new[iac] = NULL;
-	return (new);
+	s[k] = '\0';
+	while (str[*i] == c && str[*i])
+		*i += 1;
+	return (s);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(const char *str, char c)
 {
-	if (s && c)
-		return (ft_sub_strsplit(s, c));
-	return (NULL);
+	int		i;
+	int		j;
+	int		wrd;
+	char	**s;
+
+	i = 0;
+	j = 0;
+	wrd = ft_count_words(str, c);
+	if (!(s = (char **)malloc(sizeof(s) * (ft_count_words(str, c) + 2))))
+		return (NULL);
+	while (str[i] == c && str[i])
+		i++;
+	while (j < wrd && str[i])
+	{
+		s[j] = ft_word(str, c, &i);
+		j++;
+	}
+	s[j] = NULL;
+	return (s);
 }
+

@@ -1,8 +1,7 @@
 /* ADD YOUR OWN LIFX BUTTON THERE */
 
-#define BUTTONS "38:35:fb:d5:4c:6c,"
-
+#define BUTTONS "b4:7c:9c:15:7a:af"
 
 /* Make sure to separate the mac addresses with , like in the exmaple below :
-#define BUTTONS "b4:7c:9c:c3:f2:93,b4:7c:9c:c3:f2:93,b4:7c:9c:c3:f2:93"
+#define BUTTONS "b4:7c:9c:15:7a:af,fc:65:de:87:73:64,b4:7c:9c:e3:f2:62"
 */

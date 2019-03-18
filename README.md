@@ -11,7 +11,7 @@ you may want to press the dash button again after few seconds if it didn't work 
 
 
 #### For windows :
-not tested but you may try to install tcpdump and apply as filter _arp_.
+not tested but you may try to install tcpdump and apply as filter, *arp*.
 
 Then press your dash button and see what mac address comes often _(the first mac address of the lines)
 

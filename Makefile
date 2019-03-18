@@ -1,7 +1,7 @@
 PATH_SRC = srcs
 SRC = $(PATH_SRC)/*.c #WILDCARD !
 
-FLAGS= -O3 -lpcap
+FLAGS= -O3 -lpcap -g
 CC = gcc
 EXECUTABLE = listendash
 
