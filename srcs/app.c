@@ -189,16 +189,21 @@ int main(void) {
 	if (pcap_setfilter(handle, &fp) == -1)
 		return(2);
 	/* Grab a packet */
+	int	i;
+	char	**buttons;
+	buttons = ft_strsplit(BUTTONS, ',');
 	while (1)
 	{
 		packet = pcap_next(handle, &header);
 		if (packet)
 		{
-			//sign();
-			eth = (EtherHeader *)packet;
-			//printf("%s\n", BUTTON1);
-			if (strcmp(BUTTON1, ether_ntoa(&eth->sourceAddr))) {
-				sign();
+			i = 0;
+			while (buttons[i]) {
+				eth = (EtherHeader *)packet;
+				//printf("%s\n", BUTTON1);
+				if (strcmp(buttons[i], ether_ntoa(&eth->sourceAddr)))
+					sign();
+				i++;
 			}
 			//printf("%s\n", ether_ntoa(&eth->sourceAddr));
 		}

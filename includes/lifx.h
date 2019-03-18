@@ -33,11 +33,11 @@
 #define LIFX_H
 
 #include <stdbool.h>
-#include "bulb.h"
 #include "color.h"
 
 #define LIFX_LABEL_LENGTH (32) // does not include NULL char at the end
 
+char	**ft_strsplit(char const *s, char c);
 
 /** opens a UDP socket and initializes it. In addition, a random source_id gets generated */
 int init_lifx_lib(void);
