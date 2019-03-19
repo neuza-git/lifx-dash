@@ -22,9 +22,10 @@ make
 
 
 
-### exmples of use :
-./dashbutton
-screen -md dashbutton
+### Examples of use :
+`./dashbutton`
+
+`screen -md dashbutton`
 
 _(for now it just run and listen for the network traffic you can ctrl-c to quit but it does require to be run in background manually, for example [the screen package that I find very easy to use](https://linuxize.com/post/how-to-use-linux-screen/))_
 
