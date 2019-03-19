@@ -1,6 +1,6 @@
 # This code allow you to use your amazon dash buttons to toggle the power of your lifx
 
-## Detect your Amazon Dash boutton mac addresses
+## Detect your Amazon Dash boutton mac addresses (you can also try via your router web interface)
 Make sure that you have configured your button with the amazon application but not yet selected any product so it can detect the button and you don't end up buying anything
 
 Also they'll tends to spam your phone if you haven't linked any product, so make sure to disable some notification on their app ;)
@@ -22,15 +22,16 @@ make
 
 
 
-### How to start :
-./listendash
+### exmples of use :
+./dashbutton
+screen -md dashbutton
 
 _(for now it just run and listen for the network traffic you can ctrl-c to quit but it does require to be run in background manually, for example [the screen package that I find very easy to use](https://linuxize.com/post/how-to-use-linux-screen/))_
 
 
 
 ### Dependence :
-It requires the *libpcap developer library* : (otherwise you'll get this error : pcap.h: No such file or directory)
+It requires the *libpcap developer library* : (otherwise you may get this error : pcap.h: No such file or directory)
 
 
 For ubuntu/debian (remove sudo if you don't have it) :

@@ -3,21 +3,21 @@ SRC = $(PATH_SRC)/*.c #WILDCARD !
 
 FLAGS= -O3 -lpcap
 CC = gcc
-EXECUTABLE = listendash
+BINARY = dashbutton
 
 HEADERS = -I includes/
 
-all : $(EXECUTABLE)
+all : $(BINARY)
 
-$(EXECUTABLE) : $(SRC)
-	$(CC) $(SRC) -o $(EXECUTABLE) -I includes/ $(FLAGS)
-	@printf "$(EXECUTABLE) created\n"
+$(BINARY) : $(SRC)
+	$(CC) $(SRC) -o $(BINARY) -I includes/ $(FLAGS)
+	@printf "$(BINARY) created\n"
 	
 
 clean : 
-	/bin/rm -f $(EXECUTABLE)
-	@printf "$(EXECUTABLE) removed\n"
+	/bin/rm -f $(BINARY)
+	@printf "$(BINARY) removed\n"
 
 re : clean all
 
-.PHONY : clean all $(EXECUTABLE)
+.PHONY : clean all $(BINARY)
