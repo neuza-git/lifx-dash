@@ -20,7 +20,7 @@ Then press your dash button and see what mac address comes often _(the first mac
 you can clone then just do _(I gotta create a new Makefile I know...)_
 make
 
-Then you can edit the file buttons.h to insert the mac address of your buttons
+_Then you can edit the file buttons.h to insert the mac address of your buttons_
 
 
 ### Examples of use :
