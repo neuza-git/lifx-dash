@@ -20,6 +20,7 @@ Then press your dash button and see what mac address comes often _(the first mac
 you can clone then just do _(I gotta create a new Makefile I know...)_
 make
 
+Then you can edit the file buttons.h to insert the mac address of your buttons
 
 
 ### Examples of use :
@@ -37,7 +38,7 @@ It requires the *libpcap developer library* : (otherwise you may get this error 
 
 For ubuntu/debian (remove sudo if you don't have it) :
 
-sudo apt-get install libcap-dev
+sudo apt-get install libpcap-dev
 
 
 For redhat based distros :
