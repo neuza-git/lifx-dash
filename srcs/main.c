@@ -10,6 +10,15 @@ typedef struct __attribute__((__packed__)) EtherHeader {
 	const struct ether_addr sourceAddr;
 } EtherHeader;
 
+char *ether_ntoa_rz(const struct ether_addr *addr, char *buf)
+{
+    sprintf(buf, "%02x:%02x:%02x:%02x:%02x:%02x",
+            addr->ether_addr_octet[0], addr->ether_addr_octet[1],
+            addr->ether_addr_octet[2], addr->ether_addr_octet[3],
+            addr->ether_addr_octet[4], addr->ether_addr_octet[5]);
+    return buf;
+}
+
 static void toggleBulbs(bulb_service_t **bulbs)
 {
 	int i;
@@ -57,6 +66,8 @@ int main(void) {
 
 	int	i;
 	char	**bts;
+	char	*bt;
+	static char buf[18];
 
 	/* Define the device */
 	dev = pcap_lookupdev(errbuf);
@@ -88,11 +99,15 @@ int main(void) {
 			i = 0;
 			while (bts[i]) {
 				eth = (EtherHeader *)packet;
+				bzero(buf, sizeof(buf));
+				ether_ntoa_rz(&eth->sourceAddr, buf);
+				bt = strdup(buf);
 				//printf("%d\n", strcmp(bts[i], ether_ntoa(&eth->sourceAddr)));
 				//printf("%s-%s\n", bts[i], ether_ntoa(&eth->sourceAddr));
-				if (strcasecmp(bts[i], ether_ntoa(&eth->sourceAddr)) == 0)
+				if (strcasecmp(bts[i], bt) == 0)
 					toggle();
 				i++;
+				free(bt);
 			}
 			//printf("%s\n", ether_ntoa(&eth->sourceAddr));
 		}
