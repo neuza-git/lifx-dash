@@ -90,7 +90,7 @@ int main(void) {
 				eth = (EtherHeader *)packet;
 				//printf("%d\n", strcmp(bts[i], ether_ntoa(&eth->sourceAddr)));
 				//printf("%s-%s\n", bts[i], ether_ntoa(&eth->sourceAddr));
-				if (strcmp(bts[i], ether_ntoa(&eth->sourceAddr)) == 0)
+				if (strcasecmp(bts[i], ether_ntoa(&eth->sourceAddr)) == 0)
 					toggle();
 				i++;
 			}
